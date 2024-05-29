@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            background-color: #f4f4f4;
+            padding: 10px;
+        }
+        .menu-center {
+            display: flex;
+            justify-content: left;
+            flex-grow: 1;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+        li {
+            margin-right: 20px;
+        }
+        a {
+            text-decoration: none;
+            color: #333;
+            font-weight: bold;
+        }
+        a:hover {
+            color: #000;
+        }
+        .menu-item {
+            display: block;
+            padding: 10px;
+            background-color: #fff;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            position: relative;
+        }
+        .menu-item button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+        .navbar-right {
+            display: flex;
+            margin-left: auto;
+        }
+        /* Style for the footer */
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        /* Style for the tabs */
+        .tab {
+            display: none;
+        }
+        .tab.active {
+            display: block;
+        }
+        #tabs {
+            margin: 20px 0;
+        }
+        #tabs a {
+            margin-right: 10px;
+            cursor: pointer;
+        }
+        #tabs a.active {
+            font-weight: bold;
+        }
+        /* Style for the cart */
+        #cart {
+            margin: 20px;
+            padding: 10px;
+            border: 1px solid #ccc;
+            background-color: #f4f4f4;
+        }
+        #cart h2 {
+            text-decoration: underline;
+        }
+        .cart-item {
+            margin-bottom: 10px;
+        }
+        .cart-item p {
+            margin: 5px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>TNK Technologies</h1>
+        <p>Welcome to Our Menu</p>
+    </header>
+    <nav>
+        <ul class="menu-left">
+            <li><a href="#starters" onclick="showTab('starters')">Starters</a></li>
+            <li><a href="#main-courses" onclick="showTab('main-courses')">Main Courses</a></li>
+            <li><a href="#desserts" onclick="showTab('desserts')">Desserts</a></li>
+            <li><a href="#cart" onclick="showTab('cart')">Cart</a></li>
+        </ul>
+        <ul class="navbar-right">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="menu.html">Menu</a></li>
+            <li><a href="About%20us.html">About Us</a></li>
+            <li><a href="Contact%20page.html">Contact</a></li>
+        </ul>
+    </nav>
+    <section id="starters" class="tab active">
+        <img src="starters.jpeg" alt="startersPrawns" width="200" height="150">
+        <h2>Starters</h2>
+        <div class="menu-item">
+            <h3>Prawns</h3>
+            <p>Cooked in chilli and butter.</p>
+            <p>Price: £10.00</p>
+            <button onclick="addToCart('Prawns', 'Cooked in chilli and butter.', 10.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>SEA BASS CEVICHE</h3>
+            <p>Aji amarillo and ponzu dressing, lime, avocado crema, pickled jalapeño, red onion.</p>
+            <p>Price: £12.50</p>
+            <button onclick="addToCart('SEA BASS CEVICHE', 'Aji amarillo and ponzu dressing, lime, avocado crema, pickled jalapeño, red onion.', 12.50)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Halloumi Sticks</h3>
+            <p>Five chunky sticks of grilled halloumi with our chilli jam for dipping.</p>
+            <p>Price: £8.00</p>
+            <button onclick="addToCart('Halloumi Sticks', 'Five chunky sticks of grilled halloumi with our chilli jam for dipping.', 8.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Spicy Mixed olives</h3>
+            <p>With garlic, peppers and mushrooms. Just watch out for any stray stones.</p>
+            <p>Price: £5.00</p>
+            <button onclick="addToCart('Spicy Mixed olives', 'With garlic, peppers and mushrooms. Just watch out for any stray stones.', 5.00)">Add to Cart</button>
+        </div>
+    </section>
+    <section id="main-courses" class="tab">
+        <img src="/Main%202.jpg" alt="mainSteak" width="200" height="150">
+        <h2>Main Courses</h2>
+        <div class="menu-item">
+            <h3>Rib Eye Steak</h3>
+            <p>Delicately marbled throughout for superb, full-bodied flavour.</p>
+            <p>Price: £20.00</p>
+            <button onclick="addToCart('Rib Eye Steak', 'Delicately marbled throughout for superb, full-bodied flavour.', 20.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Classic Argentinian Burger</h3>
+            <p>100% Argentine beef patty, brioche bun, cherry tomato jam, baby gem lettuce, onion, mayonnaise, chips.</p>
+            <p>Price: £15.00</p>
+            <button onclick="addToCart('Classic Argentinian Burger', '100% Argentine beef patty, brioche bun, cherry tomato jam, baby gem lettuce, onion, mayonnaise, chips.', 15.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Barbacoa-Glazed salmon</h3>
+            <p>Sesame tofu cream, red meat radish, coriander and mint salad</p>
+            <p>Price: £18.00</p>
+            <button onclick="addToCart('Barbacoa-Glazed salmon', 'Sesame tofu cream, red meat radish, coriander and mint salad', 18.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>SEABREAM</h3>
+            <p>Romesco sauce, pesto, grilled Tenderstem broccoli, lemon zest</p>
+            <p>Price: £16.00</p>
+            <button onclick="addToCart('SEABREAM', 'Romesco sauce, pesto, grilled Tenderstem broccoli, lemon zest', 16.00)">Add to Cart</button>
+        </div>
+    </section>
+    <section id="desserts" class="tab">
+        <img src="/Dessert.jpg" alt="dessertCake" width="200" height="150">
+        <h2>Desserts</h2>
+        <div class="menu-item">
+            <h3>Chocolate chip cookie dough</h3>
+            <p>Served with fresh vanilla ice cream, whipped cream, or custard.</p>
+            <p>Price: £6.00</p>
+            <button onclick="addToCart('Chocolate chip cookie dough', 'Served with fresh vanilla ice cream, whipped cream, or custard.', 6.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Strawberry Solutions</h3>
+            <p>Fresh strawberries, milk flakes, and melted chocolate sauce.</p>
+            <p>Price: £7.00</p>
+            <button onclick="addToCart('Strawberry Solutions', 'Fresh strawberries, milk flakes, and melted chocolate sauce.', 7.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Chocolate Sorbet</h3>
+            <p>Poached cherries, Crème de Cassis, chocolate crumbs</p>
+            <p>Price: £8.00</p>
+            <button onclick="addToCart('Chocolate Sorbet', 'Poached cherries, Crème de Cassis, chocolate crumbs', 8.00)">Add to Cart</button>
+        </div>
+        <div class="menu-item">
+            <h3>Mango, caramel and coconut flan</h3>
+            <p>Passion fruit, coconut granita, fresh lime zest.</p>
+            <p>Price: £7.50</p>
+            <button onclick="addToCart('Mango, caramel and coconut flan', 'Passion fruit, coconut granita, fresh lime zest.', 7.50)">Add to Cart</button>
+        </div>
+    </section>
+    <section id="cart" class="tab">
+        <h2>Cart</h2>
+        <div id="cart-items"></div>
+        <div id="cart-total">
+            <h3>Total: £<span id="total-price">0.00</span></h3>
+        </div>
+    </section>
+    <footer>
+        &copy; 2024 TNK Technologies. All rights reserved.
+    </footer>
+    <script src="cart.js"></script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header and Footer */
+header, footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1em 0;
+}
+
+header nav ul, footer nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+header nav ul li, footer nav ul li {
+    display: inline;
+    margin: 0 10px;
+}
+
+header nav ul li a, footer nav ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+header nav ul li a:hover, footer nav ul li a:hover {
+    text-decoration: underline;
+}
+
+
